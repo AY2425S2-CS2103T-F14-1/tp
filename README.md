@@ -1,4 +1,4 @@
-[![CI Status](https://github.com/se-edu/addressbook-level3/workflows/Java%20CI/badge.svg)](https://github.com/se-edu/addressbook-level3/actions)
+[![MarkBind Action](https://github.com/AY2425S2-CS2103T-F10-3/tp/actions/workflows/docs.yml/badge.svg)](https://github.com/AY2425S2-CS2103T-F10-3/tp/actions/workflows/docs.yml)
 
 ![Ui](docs/images/Ui.png)
 
