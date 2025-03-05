@@ -279,8 +279,9 @@ _{Explain here how the data archiving feature will be implemented}_
 * can type fast
 * prefers typing to mouse interactions
 * is reasonably comfortable using CLI apps
+* National University of Singapore students
 
-**Value proposition**: manage contacts faster than a typical mouse/GUI driven app
+**Value proposition**: manage contacts for NUS students faster than a typical mouse/GUI driven app
 
 
 ### User stories
@@ -289,12 +290,11 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 | Priority | As a …​                                    | I want to …​                 | So that I can…​                                                        |
 |----------|--------------------------------------------|------------------------------|------------------------------------------------------------------------|
-| `* * *`  | new user                                   | see usage instructions       | refer to instructions when I forget how to use the App                 |
-| `* * *`  | user                                       | add a new person             |                                                                        |
-| `* * *`  | user                                       | delete a person              | remove entries that I no longer need                                   |
-| `* * *`  | user                                       | find a person by name        | locate details of persons without having to go through the entire list |
-| `* *`    | user                                       | hide private contact details | minimize chance of someone else seeing them by accident                |
-| `*`      | user with many persons in the address book | sort persons by name         | locate a person easily                                                 |
+| `* * *`  | user                                       | add a new person             | store and retrieve essential information easily                        |
+| `* * *`  | user                                       | delete a person              | remove entries that are no longer need                                 |
+| `* * *`  | user                                       | find a person by name        | quickly locate specific individuals                                    |
+| `* *`    | user                                       | edit contact details         | I can keep their details up-to-date                                    |
+| `*`      | user with many persons in the address book | search for contacts fuzzily  | find a person even if I do not correctly know their names              |
 
 *{More to be added}*
 
