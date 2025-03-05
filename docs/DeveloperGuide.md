@@ -332,8 +332,12 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 1.  Should work on any _mainstream OS_ as long as it has Java `17` or above installed.
 2.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
-
-*{More to be added}*
+4.  The product should be for a single user.
+5.  Response to any use action should become visible within 5 seconds.
+6.  The system should be useable by non-technical users.
+7.  Command error messages should be clear and informative enough that even non-technical users can understand the issues.
+8.  The data should be stored locally and should be in a human editable text file.
+9.  The software should not depend on your own remote server.
 
 ### Glossary
 
