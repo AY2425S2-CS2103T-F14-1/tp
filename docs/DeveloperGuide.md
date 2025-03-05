@@ -325,7 +325,40 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 2.
 
-*{More to be added}*
+**Use case: Add a person**
+
+**MSS**
+
+1.  User requests to add a new person.
+2.  AddressBook saves the new person.
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. User provides incomplete or invalid details.
+
+    * 2a1. AddressBook shows an error message.
+
+      Use case ends.
+
+**Use case: Find a person**
+
+**MSS**
+
+1.  User enters a search term.
+2.  AddressBook searches and displays matching persons.
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. No matching persons found
+
+    * 2a1. AddressBook informs the user that no results match the search.
+
+      Use case ends.
+
 
 ### Non-Functional Requirements
 
