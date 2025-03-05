@@ -7,19 +7,18 @@
 
 We are a team based in the [School of Computing, National University of Singapore](http://www.comp.nus.edu.sg).
 
-You can reach us at the email `e1121904@u.nus.edu.sg`
+You can reach us at the email `pang.yy@u.nus.edu`, `nicholasyapcheeang[at]u.nus.edu`
 
 ## Project team
 
-### John Doe
+### Nicholas Yap Chee Ang
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/cyrolite.png" width="200px">
 
-[[homepage](http://www.comp.nus.edu.sg/~damithch)]
-[[github](https://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[github](https://github.com/cyrolite)]
 
 * Role: Project Advisor
+* Responsibilities: UI
 
 ### Jane Doe
 
@@ -31,21 +30,21 @@ You can reach us at the email `e1121904@u.nus.edu.sg`
 * Role: Team Lead
 * Responsibilities: UI
 
-### Johnny Doe
+### Chan Ruenn Kai, Melvan
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/melvan-chan.png" width="200px">
 
-[[github](http://github.com/johndoe)] [[portfolio](team/johndoe.md)]
+[[github](http://github.com/melvan-chan)]
 
 * Role: Developer
 * Responsibilities: Data
 
-### Jean Doe
+### Pang Yang Yi
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/pang-yy.png" width="200px">
 
-[[github](http://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[github](http://github.com/pang-yy)]
+[[portfolio](team/pangyy.md)]
 
 * Role: Developer
 * Responsibilities: Dev Ops + Threading
@@ -56,5 +55,5 @@ You can reach us at the email `e1121904@u.nus.edu.sg`
 
 [[github](http://github.com/iamanoob44)]
 
-* Role: Developer
-* Responsibilities: UI
+* Role: Member
+* Responsibilities: Deliverables and deadlines
