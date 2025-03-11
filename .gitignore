@@ -2,6 +2,8 @@
 /.gradle/
 /build/
 src/main/resources/docs/
+/bin/
+*.class
 
 # IDEA files
 /.idea/
