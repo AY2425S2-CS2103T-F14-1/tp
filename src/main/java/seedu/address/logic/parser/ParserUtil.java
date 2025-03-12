@@ -14,6 +14,7 @@ import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Phone;
 import seedu.address.model.tag.Tag;
+import seedu.address.model.tutorial.Tutorial;
 
 /**
  * Contains utility methods used for parsing strings in the various *Parser classes.
@@ -120,5 +121,18 @@ public class ParserUtil {
             tagSet.add(parseTag(tagName));
         }
         return tagSet;
+    }
+
+    /**
+     * Parses {@code List<String> tutorials} into a {@code Set<Tutorial>}.
+     */
+    public static Set<Tutorial> parseTutorials(Collection<String> tutorialSet2) throws ParseException {
+        requireNonNull(tutorialSet2);
+        final Set<Tutorial> tutorialSet = new HashSet<>();
+        for (String tutorialName : tutorialSet2) {
+            String trimmedTutorialName = tutorialName.trim();
+            tutorialSet.add(new Tutorial(trimmedTutorialName));
+        }
+        return tutorialSet;
     }
 }

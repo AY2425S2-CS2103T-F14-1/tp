@@ -9,6 +9,7 @@ import java.util.Set;
 
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.tag.Tag;
+import seedu.address.model.tutorial.Tutorial;
 
 /**
  * Represents a Person in the address book.
@@ -22,19 +23,19 @@ public class Person {
     private final Email email;
 
     // Data fields
-    private final Address address;
     private final Set<Tag> tags = new HashSet<>();
+    private final Set<Tutorial> tutorialClasses = new HashSet<>();
 
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Phone phone, Email email, Address address, Set<Tag> tags) {
-        requireAllNonNull(name, phone, email, address, tags);
+    public Person(Name name, Phone phone, Email email, Set<Tag> tags, Set<Tutorial> tuts) {
+        requireAllNonNull(name, phone, email, tags, tuts);
         this.name = name;
         this.phone = phone;
         this.email = email;
-        this.address = address;
         this.tags.addAll(tags);
+        this.tutorialClasses.addAll(tuts);
     }
 
     public Name getName() {
@@ -49,10 +50,6 @@ public class Person {
         return email;
     }
 
-    public Address getAddress() {
-        return address;
-    }
-
     /**
      * Returns an immutable tag set, which throws {@code UnsupportedOperationException}
      * if modification is attempted.
@@ -61,8 +58,12 @@ public class Person {
         return Collections.unmodifiableSet(tags);
     }
 
+    public Set<Tutorial> getTutorials() {
+        return Collections.unmodifiableSet(tutorialClasses);
+    }
+
     /**
-     * Returns true if both persons have the same name.
+     * Returns true if both persons have the same email.
      * This defines a weaker notion of equality between two persons.
      */
     public boolean isSamePerson(Person otherPerson) {
@@ -71,7 +72,7 @@ public class Person {
         }
 
         return otherPerson != null
-                && otherPerson.getName().equals(getName());
+                && otherPerson.getEmail().equals(getEmail());
     }
 
     /**
@@ -93,14 +94,14 @@ public class Person {
         return name.equals(otherPerson.name)
                 && phone.equals(otherPerson.phone)
                 && email.equals(otherPerson.email)
-                && address.equals(otherPerson.address)
-                && tags.equals(otherPerson.tags);
+                && tags.equals(otherPerson.tags)
+                && tutorialClasses.equals(otherPerson.tutorialClasses);
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, address, tags);
+        return Objects.hash(name, phone, email, tags, tutorialClasses);
     }
 
     @Override
@@ -109,8 +110,8 @@ public class Person {
                 .add("name", name)
                 .add("phone", phone)
                 .add("email", email)
-                .add("address", address)
                 .add("tags", tags)
+                .add("tutorialClasses", tutorialClasses)
                 .toString();
     }
 
