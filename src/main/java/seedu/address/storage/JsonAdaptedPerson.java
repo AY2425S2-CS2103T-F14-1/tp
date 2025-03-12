@@ -76,7 +76,13 @@ class JsonAdaptedPerson {
         }
 
         final List<Tutorial> personTutorials = new ArrayList<>();
+        if (tutorials == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Tutorial.class.getSimpleName()));
+        }
         for (JsonAdaptedTutorial tutorial : tutorials) {
+            if (!Tutorial.isValidTutorial(tutorial.getTutorialName())) {
+                throw new IllegalValueException(Tutorial.MESSAGE_CONSTRAINTS);
+            }
             personTutorials.add(tutorial.toModelType());
         }
 
@@ -102,6 +108,7 @@ class JsonAdaptedPerson {
         if (!Email.isValidEmail(email)) {
             throw new IllegalValueException(Email.MESSAGE_CONSTRAINTS);
         }
+        
         final Email modelEmail = new Email(email);
 
         final Set<Tag> modelTags = new HashSet<>(personTags);

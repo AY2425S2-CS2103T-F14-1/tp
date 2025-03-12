@@ -6,6 +6,7 @@ package seedu.address.model.tutorial;
  */
 public class Tutorial {
     public static final String MESSAGE_CONSTRAINTS = "Tutorial names should be alphanumeric";
+    public static final String VALIDATION_REGEX = "\\p{Alnum}+";
     public final String tutorialName;
 
     public Tutorial(String tutorialName) {
@@ -37,5 +38,13 @@ public class Tutorial {
      */
     public String toString() {
         return '[' + tutorialName + ']';
+    }
+
+    public String getTutorialName() {
+        return tutorialName;
+    }
+
+    public static boolean isValidTutorial(String test) {
+        return test.matches(VALIDATION_REGEX);
     }
 }

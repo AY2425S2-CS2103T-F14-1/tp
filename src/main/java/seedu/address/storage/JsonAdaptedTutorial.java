@@ -39,4 +39,8 @@ class JsonAdaptedTutorial {
         }
         return new Tutorial(tutorialName);
     }
+    
+    public String getTutorialName() {
+        return tutorialName;
+    }
 }

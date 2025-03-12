@@ -1,9 +1,8 @@
 package seedu.address.logic.parser;
 
-import static java.util.Objects.requireNonNull;
-
 import java.util.Collection;
 import java.util.HashSet;
+import static java.util.Objects.requireNonNull;
 import java.util.Set;
 
 import seedu.address.commons.core.index.Index;
@@ -123,15 +122,23 @@ public class ParserUtil {
         return tagSet;
     }
 
+    public static Tutorial parseTutorial(String tutorial) throws ParseException {
+        requireNonNull(tutorial);
+        String trimmedTutorial = tutorial.trim();
+        if (!Tutorial.isValidTutorial(trimmedTutorial)) {
+            throw new ParseException(Tutorial.MESSAGE_CONSTRAINTS);
+        }
+        return new Tutorial(trimmedTutorial);
+    }
+
     /**
      * Parses {@code List<String> tutorials} into a {@code Set<Tutorial>}.
      */
     public static Set<Tutorial> parseTutorials(Collection<String> tutorialSet2) throws ParseException {
         requireNonNull(tutorialSet2);
         final Set<Tutorial> tutorialSet = new HashSet<>();
-        for (String tutorialName : tutorialSet2) {
-            String trimmedTutorialName = tutorialName.trim();
-            tutorialSet.add(new Tutorial(trimmedTutorialName));
+        for (String tutorial : tutorialSet2) {
+            tutorialSet.add(parseTutorial(tutorial));
         }
         return tutorialSet;
     }
