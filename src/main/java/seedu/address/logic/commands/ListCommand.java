@@ -7,6 +7,7 @@ import java.util.Objects;
 
 import seedu.address.model.Model;
 import seedu.address.ui.DisplayPreferences;
+import seedu.address.ui.UiManager;
 
 /**
  * Lists all persons in the address book to the user.
@@ -54,6 +55,9 @@ public class ListCommand extends Command {
         DisplayPreferences.setShowTags(showTags);
 
         model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+
+        UiManager.refreshPersonListPanel();
+        
         return new CommandResult(MESSAGE_SUCCESS);
     }
     @Override
