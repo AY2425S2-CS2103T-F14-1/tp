@@ -21,15 +21,24 @@ public class UiManager implements Ui {
 
     private static final Logger logger = LogsCenter.getLogger(UiManager.class);
     private static final String ICON_APPLICATION = "/images/address_book_32.png";
+    private static MainWindow mainWindow;
 
     private Logic logic;
-    private MainWindow mainWindow;
 
     /**
      * Creates a {@code UiManager} with the given {@code Logic}.
      */
     public UiManager(Logic logic) {
         this.logic = logic;
+    }
+
+    /**
+     * Refreshes the PersonListPanel to reflect the updated filtered person list.
+     */
+    public static void refreshPersonListPanel() {
+        if (mainWindow != null) {
+            mainWindow.refreshPersonListPanel();
+        }
     }
 
     @Override

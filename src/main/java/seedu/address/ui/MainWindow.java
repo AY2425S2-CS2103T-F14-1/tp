@@ -72,6 +72,15 @@ public class MainWindow extends UiPart<Stage> {
         return primaryStage;
     }
 
+    /**
+     * Refreshes the PersonListPanel by reloading the person list.
+     */
+    public void refreshPersonListPanel() {
+        if (personListPanel != null) {
+            personListPanel.refresh();
+        }
+    }
+
     private void setAccelerators() {
         setAccelerator(helpMenuItem, KeyCombination.valueOf("F1"));
     }
