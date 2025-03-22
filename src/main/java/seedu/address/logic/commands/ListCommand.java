@@ -57,7 +57,6 @@ public class ListCommand extends Command {
         model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
 
         UiManager.refreshPersonListPanel();
-        
         return new CommandResult(MESSAGE_SUCCESS);
     }
     @Override
