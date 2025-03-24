@@ -31,6 +31,9 @@ public class UiManagerTest {
 
     @BeforeAll
     public static void initToolkit() {
+        // Set JavaFX to headless mode
+        System.setProperty("javafx.platform", "offscreen");
+
         // Initialize JavaFX Toolkit
         CountDownLatch latch = new CountDownLatch(1);
         Platform.startup(latch::countDown);
