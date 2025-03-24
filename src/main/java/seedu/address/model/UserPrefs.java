@@ -2,6 +2,8 @@ package seedu.address.model;
 
 import static java.util.Objects.requireNonNull;
 
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Objects;
@@ -14,7 +16,18 @@ import seedu.address.commons.core.GuiSettings;
 public class UserPrefs implements ReadOnlyUserPrefs {
 
     private GuiSettings guiSettings = new GuiSettings();
-    private Path addressBookFilePath = Paths.get("data" , "addressbook.json");
+    static {
+        try {
+            Path filePath = Paths.get("data", "addressbook.json");
+            if (Files.notExists(filePath)) {
+                Files.createDirectories(filePath.getParent());
+                Files.createFile(filePath);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to create default address book file", e);
+        }
+    }
+    private Path addressBookFilePath = Paths.get("data", "addressbook.json");
 
     /**
      * Creates a {@code UserPrefs} with default values.
