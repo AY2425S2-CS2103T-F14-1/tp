@@ -31,6 +31,7 @@ public class StudentIdTest {
         assertFalse(StudentId.isValidStudentId("B1234567Z")); // does not start with 'A'
         assertFalse(StudentId.isValidStudentId("A1234567")); // missing last letter
         assertFalse(StudentId.isValidStudentId("A1234567ZZ")); // more than one letter at the end
+        assertFalse(StudentId.isValidStudentId("A1234567Z ")); //trailing white space
 
         // valid student IDs
         assertTrue(StudentId.isValidStudentId("A1234567Z"));
