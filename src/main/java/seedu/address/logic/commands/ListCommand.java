@@ -20,8 +20,8 @@ public class ListCommand extends Command {
     public static final String MESSAGE_SUCCESS = "Listed all persons";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Lists all persons in the address book. "
-            + "Parameters: [name] [phone] [email] [address] [tags] [id]\n"
-            + "Example: " + COMMAND_WORD + " name address id";
+            + "Parameters: [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [s/STUDENT_ID] [t/TAG] [tut/TUTORIAL]\n"
+            + "Example: " + COMMAND_WORD + " n/ p/ e/";
 
     private final boolean showName;
     private final boolean showPhone;
@@ -29,18 +29,20 @@ public class ListCommand extends Command {
     private final boolean showAddress;
     private final boolean showStudentId;
     private final boolean showTags;
+    private final boolean showTutorials;
 
     /**
      * Creates a ListCommand to list all persons with the specified display preferences.
      */
     public ListCommand(boolean showName, boolean showPhone, boolean showEmail, boolean showAddress,
-                       boolean showStudentId, boolean showTags) {
+                       boolean showStudentId, boolean showTags, boolean showTutorials) {
         this.showName = showName;
         this.showPhone = showPhone;
         this.showEmail = showEmail;
         this.showAddress = showAddress;
         this.showStudentId = showStudentId;
         this.showTags = showTags;
+        this.showTutorials = showTutorials;
     }
     @Override
     public CommandResult execute(Model model) {
@@ -53,6 +55,7 @@ public class ListCommand extends Command {
         DisplayPreferences.setShowAddress(showAddress);
         DisplayPreferences.setShowStudentId(showStudentId);
         DisplayPreferences.setShowTags(showTags);
+        DisplayPreferences.setShowTutorials(showTutorials);
 
         model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
 
@@ -78,6 +81,6 @@ public class ListCommand extends Command {
 
     @Override
     public int hashCode() {
-        return Objects.hash(showName, showPhone, showEmail, showAddress, showStudentId, showTags);
+        return Objects.hash(showName, showPhone, showEmail, showAddress, showStudentId, showTags, showTutorials);
     }
 }

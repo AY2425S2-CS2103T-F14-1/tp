@@ -1,6 +1,13 @@
 package seedu.address.logic.parser;
 
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_STUDENT_ID;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -16,7 +23,10 @@ public class ListCommandParser implements Parser<ListCommand> {
 
     // Valid fields for the list command
     private static final Set<String> VALID_FIELDS = new HashSet<>(Arrays.asList(
-            "name", "phone", "email", "address", "id", "tags"
+            PREFIX_NAME.getPrefix(), PREFIX_ADDRESS.getPrefix(),
+            PREFIX_EMAIL.getPrefix(), PREFIX_PHONE.getPrefix(),
+            PREFIX_STUDENT_ID.getPrefix(), PREFIX_TAG.getPrefix(),
+            PREFIX_TUTORIAL.getPrefix()
     ));
 
     /**
@@ -34,6 +44,7 @@ public class ListCommandParser implements Parser<ListCommand> {
         boolean showAddress = true;
         boolean showStudentId = true;
         boolean showTags = true;
+        boolean showTutorial = true;
 
         if (!trimmedArgs.isEmpty()) {
             // Split arguments into tokens
@@ -47,15 +58,16 @@ public class ListCommandParser implements Parser<ListCommand> {
             }
 
             // Parse arguments to determine which fields to show
-            showName = Arrays.asList(tokens).contains("name");
-            showPhone = Arrays.asList(tokens).contains("phone");
-            showEmail = Arrays.asList(tokens).contains("email");
-            showAddress = Arrays.asList(tokens).contains("address");
-            showStudentId = Arrays.asList(tokens).contains("id");
-            showTags = Arrays.asList(tokens).contains("tags");
+            showName = Arrays.asList(tokens).contains(PREFIX_NAME.getPrefix());
+            showPhone = Arrays.asList(tokens).contains(PREFIX_PHONE.getPrefix());
+            showEmail = Arrays.asList(tokens).contains(PREFIX_EMAIL.getPrefix());
+            showAddress = Arrays.asList(tokens).contains(PREFIX_ADDRESS.getPrefix());
+            showStudentId = Arrays.asList(tokens).contains(PREFIX_STUDENT_ID.getPrefix());
+            showTags = Arrays.asList(tokens).contains(PREFIX_TAG.getPrefix());
+            showTutorial = Arrays.asList(tokens).contains(PREFIX_TUTORIAL.getPrefix());
         }
 
 
-        return new ListCommand(showName, showPhone, showEmail, showAddress, showStudentId, showTags);
+        return new ListCommand(showName, showPhone, showEmail, showAddress, showStudentId, showTags, showTutorial);
     }
 }

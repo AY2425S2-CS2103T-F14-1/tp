@@ -32,7 +32,7 @@ public class ListCommandTest {
     @Test
     public void execute_listIsNotFiltered_showsSameList() {
         // Default behavior: all fields are displayed
-        ListCommand listCommand = new ListCommand(true, true, true, true, true, true);
+        ListCommand listCommand = new ListCommand(true, true, true, true, true, true, true);
         assertCommandSuccess(listCommand, model, ListCommand.MESSAGE_SUCCESS, expectedModel);
 
         // Verify DisplayPreferences are updated correctly
@@ -50,7 +50,7 @@ public class ListCommandTest {
         showPersonAtIndex(model, INDEX_FIRST_PERSON);
 
         // Execute the command to reset the filter and show all persons
-        ListCommand listCommand = new ListCommand(true, true, true, true, true, true);
+        ListCommand listCommand = new ListCommand(true, true, true, true, true, true, true);
         assertCommandSuccess(listCommand, model, ListCommand.MESSAGE_SUCCESS, expectedModel);
 
         // Verify DisplayPreferences are updated correctly
@@ -65,7 +65,7 @@ public class ListCommandTest {
     @Test
     public void execute_listWithSpecificFields_showsFilteredFields() {
         // Test with specific fields (e.g., name and phone only)
-        ListCommand listCommand = new ListCommand(true, true, false, false, false, false);
+        ListCommand listCommand = new ListCommand(true, true, false, false, false, false, false);
         assertCommandSuccess(listCommand, model, ListCommand.MESSAGE_SUCCESS, expectedModel);
 
         // Verify DisplayPreferences are updated correctly
@@ -84,7 +84,7 @@ public class ListCommandTest {
         expectedModel = new ModelManager();
 
         // Execute the command
-        ListCommand listCommand = new ListCommand(true, true, true, true, true, true);
+        ListCommand listCommand = new ListCommand(true, true, true, true, true, true, true);
         assertCommandSuccess(listCommand, model, ListCommand.MESSAGE_SUCCESS, expectedModel);
 
         // Verify DisplayPreferences are updated correctly
@@ -99,7 +99,7 @@ public class ListCommandTest {
     @Test
     public void execute_updatesFilteredPersonList() {
         // Test that the filtered person list is updated
-        ListCommand listCommand = new ListCommand(true, true, true, true, true, true);
+        ListCommand listCommand = new ListCommand(true, true, true, true, true, true, true);
         assertCommandSuccess(listCommand, model, ListCommand.MESSAGE_SUCCESS, expectedModel);
 
         // Verify that the filtered list is updated
@@ -109,9 +109,9 @@ public class ListCommandTest {
     @Test
     public void equals() {
         // Test equality of ListCommand objects
-        ListCommand listCommand1 = new ListCommand(true, true, true, true, true, true);
-        ListCommand listCommand2 = new ListCommand(true, true, true, true, true, true);
-        ListCommand listCommand3 = new ListCommand(false, true, true, true, true, true);
+        ListCommand listCommand1 = new ListCommand(true, true, true, true, true, true, true);
+        ListCommand listCommand2 = new ListCommand(true, true, true, true, true, true, true);
+        ListCommand listCommand3 = new ListCommand(false, true, true, true, true, true, true);
 
         // Same values -> returns true
         assertEquals(listCommand1, listCommand2);
@@ -132,9 +132,9 @@ public class ListCommandTest {
     @Test
     public void hashCode_test() {
         // Test hashCode implementation
-        ListCommand listCommand1 = new ListCommand(true, true, true, true, true, true);
-        ListCommand listCommand2 = new ListCommand(true, true, true, true, true, true);
-        ListCommand listCommand3 = new ListCommand(false, true, true, true, true, true);
+        ListCommand listCommand1 = new ListCommand(true, true, true, true, true, true, true);
+        ListCommand listCommand2 = new ListCommand(true, true, true, true, true, true, true);
+        ListCommand listCommand3 = new ListCommand(false, true, true, true, true, true, true);
 
         // Same values -> same hashCode
         assertEquals(listCommand1.hashCode(), listCommand2.hashCode());
