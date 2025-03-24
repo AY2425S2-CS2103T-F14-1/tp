@@ -25,11 +25,11 @@ import seedu.address.model.person.Person;
 
 public class UiManagerTest {
 
+    private static boolean isToolkitInitialized = false;
+    
     private UiManager uiManager;
     private LogicStub logicStub;
     private MainWindowStub mainWindowStub;
-
-    private static boolean isToolkitInitialized = false;
 
     @BeforeAll
     public static void initToolkit() {
