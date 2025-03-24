@@ -26,7 +26,7 @@ import seedu.address.model.person.Person;
 public class UiManagerTest {
 
     private static boolean isToolkitInitialized = false;
-    
+
     private UiManager uiManager;
     private LogicStub logicStub;
     private MainWindowStub mainWindowStub;
@@ -81,7 +81,6 @@ public class UiManagerTest {
     public void refreshPersonListPanel_mainWindowNull_doesNotThrow() {
         // Set the static MainWindow field to null
         UiManager.setMainWindow(null);
-
         // Call the method under test and ensure no exception is thrown
         assertDoesNotThrow(UiManager::refreshPersonListPanel);
     }
