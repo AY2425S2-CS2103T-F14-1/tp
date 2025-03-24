@@ -28,15 +28,7 @@ public class PersonListPanel extends UiPart<Region> {
         personListView.setItems(personList);
         personListView.setCellFactory(listView -> new PersonListViewCell());
     }
-
-    /**
-     * Getter for the personListView.
-     * This is used for testing purposes.
-     */
-    public ListView<Person> getPersonListView() {
-        return personListView;
-    }
-
+    
     /**
      * Refreshes the PersonListPanel by reloading the person list.
      */
