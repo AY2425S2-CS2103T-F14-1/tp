@@ -23,8 +23,6 @@ import seedu.address.model.AddressBook;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.person.Person;
 
-
-
 public class UiManagerTest {
 
     private UiManager uiManager;
