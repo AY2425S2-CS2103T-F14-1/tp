@@ -28,7 +28,7 @@ public class PersonListPanel extends UiPart<Region> {
         personListView.setItems(personList);
         personListView.setCellFactory(listView -> new PersonListViewCell());
     }
-    
+
     /**
      * Refreshes the PersonListPanel by reloading the person list.
      */
