@@ -29,18 +29,20 @@ public class UiManagerTest {
     private LogicStub logicStub;
     private MainWindowStub mainWindowStub;
 
+    private static boolean isToolkitInitialized = false;
+
     @BeforeAll
     public static void initToolkit() {
-        // Set JavaFX to headless mode
-        System.setProperty("javafx.platform", "offscreen");
-
-        // Initialize JavaFX Toolkit
-        CountDownLatch latch = new CountDownLatch(1);
-        Platform.startup(latch::countDown);
-        try {
-            latch.await(); // Wait for the JavaFX Toolkit to initialize
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+        if (!isToolkitInitialized) {
+            System.setProperty("javafx.platform", "offscreen");
+            CountDownLatch latch = new CountDownLatch(1);
+            Platform.startup(latch::countDown);
+            try {
+                latch.await(); // Wait for the JavaFX Toolkit to initialize
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            isToolkitInitialized = true;
         }
     }
 
