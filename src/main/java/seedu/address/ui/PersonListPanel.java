@@ -30,6 +30,13 @@ public class PersonListPanel extends UiPart<Region> {
     }
 
     /**
+     * Refreshes the PersonListPanel by reloading the person list.
+     */
+    public void refresh() {
+        personListView.refresh();
+    }
+
+    /**
      * Custom {@code ListCell} that displays the graphics of a {@code Person} using a {@code PersonCard}.
      */
     class PersonListViewCell extends ListCell<Person> {

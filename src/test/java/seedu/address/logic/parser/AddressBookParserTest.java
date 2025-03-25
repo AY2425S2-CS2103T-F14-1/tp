@@ -93,11 +93,14 @@ public class AddressBookParserTest {
     @Test
     public void parseCommand_list() throws Exception {
         ListCommand command = (ListCommand) parser.parseCommand(ListCommand.COMMAND_WORD);
-        assertEquals(new ListCommand(true, true, true, true, true, true), command);
-        command = (ListCommand) parser.parseCommand(ListCommand.COMMAND_WORD + " name phone");
-        assertEquals(new ListCommand(true, true, false, false, false, false), command);
-        command = (ListCommand) parser.parseCommand(ListCommand.COMMAND_WORD + " email address tags");
-        assertEquals(new ListCommand(false, false, true, true, false, true), command);
+        assertEquals(new ListCommand(true, true, true, true, true, true, true), command);
+
+        command = (ListCommand) parser.parseCommand(ListCommand.COMMAND_WORD + " n/ p/");
+        assertEquals(new ListCommand(true, true, false, false, false, false, false), command);
+
+        command = (ListCommand) parser.parseCommand(ListCommand.COMMAND_WORD + " e/ a/ t/");
+        assertEquals(new ListCommand(false, false, true, true, false, true, false), command);
+
         assertThrows(ParseException.class, String.format(MESSAGE_INVALID_COMMAND_FORMAT, ListCommand.MESSAGE_USAGE), ()
             -> parser.parseCommand(ListCommand.COMMAND_WORD + " invalidField"));
     }
