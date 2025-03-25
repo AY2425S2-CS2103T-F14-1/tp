@@ -33,14 +33,6 @@ public class UiManager implements Ui {
     }
 
     /**
-     * Sets the mainWindow for testing purposes.
-     * This method is package-private to restrict access to the test package.
-     */
-    static void setMainWindow(MainWindow mainWindow) {
-        UiManager.mainWindow = mainWindow;
-    }
-
-    /**
      * Refreshes the PersonListPanel to reflect the updated filtered person list.
      */
     public static void refreshPersonListPanel() {
