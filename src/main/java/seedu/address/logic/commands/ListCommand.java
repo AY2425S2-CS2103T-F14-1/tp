@@ -76,7 +76,8 @@ public class ListCommand extends Command {
                 && showEmail == otherCommand.showEmail
                 && showAddress == otherCommand.showAddress
                 && showStudentId == otherCommand.showStudentId
-                && showTags == otherCommand.showTags;
+                && showTags == otherCommand.showTags
+                && showTutorials == otherCommand.showTutorials;
     }
 
     @Override
