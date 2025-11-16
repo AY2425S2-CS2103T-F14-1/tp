@@ -152,6 +152,28 @@ Examples:
 
 ---
 
+#### Adding tags to a student : `addtag`
+
+Adds one or more tags to an existing student in conTAct without removing their existing tags.
+
+Format: `addtag INDEX t/TAG [t/TAG]...`
+
+* Adds tags to the student at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **must be a positive integer** 1, 2, 3, …​
+* At least one tag must be provided.
+* Tags will be added to the student's existing tags (cumulative addition).
+* If a tag already exists for the student, it will not be duplicated.
+* Tag names should be alphanumeric values.
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+Use `addtag` when you want to add new tags without replacing all existing tags. This is more convenient than using `edit` which requires you to re-specify all existing tags.
+</div>
+
+Examples:
+* `addtag 1 t/monitor` - Adds the tag `monitor` to the first student
+* `addtag 2 t/tutor t/mentor` - Adds both `tutor` and `mentor` tags to the second student
+
+---
+
 #### Deleting a student or a group of students : `delete`
 
 Deletes students from the list based on the specified field and value.
@@ -335,6 +357,7 @@ conTAct app using the `load <file_name>` command.
 Action | Format, Examples
 --------|------------------
 **Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL [te/TELEGRAM] [t/TAG] [tut/TUTORIAL] [a/ADDRESS]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com te/jameshuai t/friend t/colleague tut/CS2103 a/123, Clementi Rd, 1234665 `
+**AddTag** | `addtag INDEX t/TAG [t/TAG]...` <br> e.g., `addtag 1 t/monitor`, `addtag 2 t/tutor t/mentor`
 **Clear** | `clear`
 **Delete** | `delete PREFIX KEYWORD`<br> e.g., `delete n/John`, `delete t/friends`, `delete s/A1234567X`
 **Edit** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [t/TAG] [tut/TUTORIAL] [a/ADDRESS]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`

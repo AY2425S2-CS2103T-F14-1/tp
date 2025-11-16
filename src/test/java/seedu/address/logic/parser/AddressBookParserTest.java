@@ -43,6 +43,11 @@ public class AddressBookParserTest {
     }
 
     @Test
+    public void parseCommand_addtag() throws Exception {
+        assertTrue(parser.parseCommand("addtag 1 t/friend") instanceof seedu.address.logic.commands.AddTagCommand);
+    }
+
+    @Test
     public void parseCommand_clear() throws Exception {
         assertTrue(parser.parseCommand(ClearCommand.COMMAND_WORD) instanceof ClearCommand);
         assertTrue(parser.parseCommand(ClearCommand.COMMAND_WORD + " 3") instanceof ClearCommand);
